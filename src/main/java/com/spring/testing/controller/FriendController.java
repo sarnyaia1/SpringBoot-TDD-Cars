@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class HomeController {
+public class FriendController {
 
-    @GetMapping("/home")
+    @GetMapping("/friend")
     public @ResponseBody String greeting() {
-        return "Hello, World";
+        return "Hello, my Friend!!";
     }
 
 }

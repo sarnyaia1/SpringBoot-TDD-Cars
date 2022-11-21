@@ -1,6 +1,6 @@
 package com.spring.testing;
 
-import com.spring.testing.controller.HomeController;
+import com.spring.testing.controller.FriendController;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,25 +16,25 @@ class TddApplicationTests {
 	private int port;
 
 	@Autowired
-	private HomeController homeController;
+	private FriendController friendController;
 
 	@Autowired
 	private TestRestTemplate restTemplate;
 
 	@Test
 	//sanity check for context load
-	public void contextLoads() throws Exception {
-		assertThat(homeController).isNotNull();
+	public void contextLoads() {
+		assertThat(friendController).isNotNull();
 	}
 
 	@Test
-	public void homeControllerShouldReturnMessage() throws Exception {
-		assertThat(restTemplate.getForObject("http://localhost:" + port + "/home", String.class))
-				.contains("Hello, World");
+	public void homeControllerShouldReturnMessage() {
+		assertThat(restTemplate.getForObject("http://localhost:" + port + "/friend", String.class))
+				.contains("Hello, my Friend!!");
 	}
 
 	@Test
-	public void greetingControllerShouldReturnMessage() throws Exception {
+	public void greetingControllerShouldReturnMessage() {
 		assertThat(restTemplate.getForObject("http://localhost:" + port + "/greeting", String.class))
 				.contains("Hello, World");
 	}

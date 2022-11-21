@@ -12,17 +12,17 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 //@WebMvcTest - if there is only 1 controller class
-@WebMvcTest(HomeController.class)
-public class HomeControllerTest {
+@WebMvcTest(FriendController.class)
+public class FriendControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
     public void shouldReturnDefaultMessage() throws Exception {
-        mockMvc.perform(get("/home"))
+        mockMvc.perform(get("/friend"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().string(containsString("Hello, World")));
+                .andExpect(content().string(containsString("Hello, my Friend!!")));
     }
 }
