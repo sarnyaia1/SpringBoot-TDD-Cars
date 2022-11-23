@@ -1,10 +1,13 @@
 package com.spring.testing.repository;
 
 import com.spring.testing.model.Car;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface CarRepository {
+import java.util.Optional;
 
-    Car getCarDetails(String name);
+@Repository
+public interface CarRepository extends CrudRepository<Car, Long>{
+
+    Optional<Car> findByName(String pulse);
 }

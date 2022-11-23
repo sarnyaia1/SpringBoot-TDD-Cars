@@ -28,7 +28,7 @@ public class CarControllerTest {
     CarService carService;
 
     @Test
-    public void carDetailsStatusIsOkTest() throws Exception {
+    public void carsStatusIsOkTest() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/cars/Opel"))
                 .andExpect(status().isOk());
     }

@@ -11,7 +11,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Car {
 
-
     @Id
     @GeneratedValue
     private Long id;

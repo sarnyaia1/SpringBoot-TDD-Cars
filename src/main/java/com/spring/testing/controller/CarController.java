@@ -18,9 +18,9 @@ public class CarController {
     private final CarService carService;
 
     @GetMapping("/{name}")
-    public ResponseEntity<Car> getCarDetails(@PathVariable String name) throws Exception{
+    public ResponseEntity<Car> getCarDetails(@PathVariable String name) throws Exception {
         Car car = carService.getCarDetails(name);
-        return new ResponseEntity<>(car, HttpStatus.OK);
+        return new ResponseEntity<>( car,HttpStatus.OK);
     }
 
 }
